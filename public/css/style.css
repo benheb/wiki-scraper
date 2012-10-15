@@ -1,0 +1,75 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+#toolbar {
+  width:702px;
+  overflow:hidden;
+  position:relative;
+}
+#form {
+  float:left;
+}
+#check-revisions {
+  float:right;
+}
+#url-container {
+  width:500px;
+}
+.url-wrapper {
+  border:1px solid #CCC;
+  overflow:hidden;
+  float:left;
+  width:700px;
+  margin-top:10px;
+}
+.urls {
+  padding:10px;
+  color:#444444;
+  float:left;
+  width:490px;
+  overflow:hidden;
+  height:30px;
+  margin-top:10px;
+  margin-bottom:6px;
+}
+.status {
+  float:right;
+  padding:10px;
+  margin-top:8px;
+  font-weight:bold;
+  color:#EEEEEE;
+}
+.status.ok {
+  color:#6cb076;
+}
+.status.update {
+  color:red;
+}
+.remove-url {
+  float:left;
+  margin:10px;
+  margin-top:12px;
+}
+#update-wiki {
+  margin-left:10px;
+}
+.loading {
+  background: #DDD url('/img/ajax-loader.gif') no-repeat center;
+}
+.loading:hover {
+  background-position: center !important;
+}
+#loading-div {
+  display:none;
+  background: url('/img/ajax-loader.gif') no-repeat center;
+  width: 24px;
+  height: 25px;
+  position: absolute;
+  left: 279px;
+  top:1px;
+}

@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  h1= title
+ 
+  div#toolbar 
+    div#form
+      input#wiki-url(type="textarea", action="/")
+      input#update-wiki(type="submit", value="Add")
+    div#loading-div 
+    div#check-revisions
+      div.btn#check Check for Revisions
+      
+  div#url-container
+ 
