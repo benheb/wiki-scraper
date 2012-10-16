@@ -7,7 +7,7 @@ $('#update-wiki').live('click', function() {
     data: {url: val},
     success: function() {
       $('#wiki-url').val("");
-      var url_item = '<div class="url-wrapper"><div class="status">status</div><div class="urls"><a href="'+val+'">'+val+'</a></div><div id="'+val+'" class="btn remove-url">remove</div></div>';
+      var url_item = '<div class="url-wrapper"><div class="status">status</div><div class="urls"><a href="'+val+'" target="blank">'+val+'</a></div><div id="'+val+'" class="btn remove-url">remove</div></div>';
       $(url_item).appendTo($('#url-container'));
       $('#loading-div').hide();
     }
@@ -52,7 +52,7 @@ $.ajax({
   success: function(data){
     //var _resorts = data[url];
     $.each(data, function(i,f){
-      var url_item = '<div class="url-wrapper"><div class="status">status</div><div class="urls"><a href="'+f.url+'">'+f.url+'</a></div><div id="'+f.url+'" class="btn remove-url">remove</div></div>';
+      var url_item = '<div class="url-wrapper"><div class="status">status</div><div class="urls"><a href="'+f.url+'" target="blank">'+f.url+'</a></div><div id="'+f.url+'" class="btn remove-url">remove</div></div>';
       $(url_item).appendTo($('#url-container'))
     });
   }
