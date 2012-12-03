@@ -1,4 +1,3 @@
-
 /**
  * Module dependencies.
  */
@@ -33,7 +32,6 @@ app.configure(function(){
 db = ('127.0.0.1/wiki_dev_urls')
 collection = ['dev_urls'];
 var db = require('mongojs').connect(db, collection);
-//collection.remove();
 
 app.configure('development', function(){
   app.use(express.errorHandler());
@@ -50,7 +48,6 @@ app.get('/wiki-urls', function(req, res) {
     res.json(urls);
   });
 });
-//app.get('/users', user.list);
 
 app.post('/db', function(req,res){
   var url = req.body.url;
@@ -109,7 +106,6 @@ app.post('/checkdbs', function(req, res) {
       db.dev_urls.update({url: url}, {$set: {latest: newDate}}, function(err, updated) {
         if (err || !updated) console.log('something went terribly wrong', err);
       });
-      //console.log('previous edit date: ', prev, 'new date: ', newDate);
       
       //compare dates
       if (newDate != prev) {
@@ -130,7 +126,6 @@ app.post('/checkdbs', function(req, res) {
     request({uri: 'http://en.wikipedia.org/w/index.php?title=Revision&action=history'}, function(err, response, body){
       var self = this;
   
-      //Just a basic error check
       if(err && response.statusCode !== 200){console.log('Request error.');}
       jsdom.env({
           html: url,
