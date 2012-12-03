@@ -29,8 +29,8 @@ app.configure(function(){
 //db = mongo.db('127.0.0.1/wiki_dev_urls?auto_reconnect');
 //collection = db.collection('dev_urls');
 
-db = ('127.0.0.1/wiki_dev_urls')
-collection = ['dev_urls'];
+db = ('127.0.0.1/wiki_scraper')
+collection = ['urls'];
 var db = require('mongojs').connect(db, collection);
 
 app.configure('development', function(){

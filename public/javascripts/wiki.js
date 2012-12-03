@@ -50,7 +50,6 @@ $('#check').live('click', function() {
 $.ajax({
   url:'/wiki-urls', 
   success: function(data){
-    //var _resorts = data[url];
     $.each(data, function(i,f){
       var url_item = '<div class="url-wrapper"><div class="status">status</div><div class="urls"><a href="'+f.url+'" target="blank">'+f.url+'</a></div><div id="'+f.url+'" class="btn remove-url">remove</div></div>';
       $(url_item).appendTo($('#url-container'))
