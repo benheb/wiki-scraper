@@ -3,7 +3,7 @@ Simple Node app to check wikipedia revision history.
 Install
 --------
 
-1. Install <ahttp://nodejs.org/>Node.js</a> on machine
+1. Install Node.js (http://nodejs.org) on machine
 2. @git clone git@github.com:benheb/wiki-scraper.git@
 3. Change directory to @wiki-scraper@
 4. Run @npm install@
