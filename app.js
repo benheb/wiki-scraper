@@ -6,7 +6,6 @@ var express = require('express')
   , jsdom = require('jsdom')
   , request = require('request')
   , routes = require('./routes')
-  , user = require('./routes/user')
   , _ = require('underscore')
   , mongo = require('mongoskin')
   , http = require('http')
@@ -43,7 +42,7 @@ app.get('/', function(req, res) {
 
 app.get('/wiki-urls', function(req, res) {
   var id = req.params.id;
-  var docs = db.dev_urls;
+  var docs = db.urls;
   docs.find().toArray(function (err, urls) {
     res.json(urls);
   });
@@ -71,8 +70,8 @@ app.post('/db', function(req,res){
   
   function addUrl(url, latest) {
     var doc = {'url': url, 'latest': latest, 'prev': latest}
-    db.dev_urls.findOne(doc, function(){
-      db.dev_urls.insert(doc);
+    db.urls.findOne(doc, function(){
+      db.urls.insert(doc);
       res.send('Success');
     });
   };
@@ -81,8 +80,8 @@ app.post('/db', function(req,res){
 
 app.post('/db/remove', function(req,res){
   var doc = req.body;
-  db.dev_urls.findOne(doc, function(){
-    db.dev_urls.remove(doc);
+  db.urls.findOne(doc, function(){
+    db.urls.remove(doc);
     res.send('Success');
   });
 });
@@ -96,14 +95,14 @@ app.post('/checkdbs', function(req, res) {
   function updateDoc(url, newDate) {
     var prev;
     var name;
-    db.dev_urls.findOne({url:url}, function(err, document) {
+    db.urls.findOne({url:url}, function(err, document) {
       prev = document.latest;
       name = document.name;
-      db.dev_urls.update({url: url}, {$set: {prev: prev}}, function(err, updated) {
+      db.urls.update({url: url}, {$set: {prev: prev}}, function(err, updated) {
         if (err || !updated) console.log('something went terribly wrong', err);
       });
   
-      db.dev_urls.update({url: url}, {$set: {latest: newDate}}, function(err, updated) {
+      db.urls.update({url: url}, {$set: {latest: newDate}}, function(err, updated) {
         if (err || !updated) console.log('something went terribly wrong', err);
       });
       
