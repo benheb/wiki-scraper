@@ -19,6 +19,6 @@ Install
 ## Running
 * node app.js
 * To run "forever" ... 
-** npm install forever -g
-** forever start app.js
-** forever stop app.js
+* * npm install forever -g
+* * forever start app.js
+* * forever stop app.js
