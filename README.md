@@ -1,4 +1,4 @@
-Simple Node app to check wikipedia revision history.
+Simple Node app to check wikipedia revision history for a specific page or group of pages.
 
 Install
 --------
